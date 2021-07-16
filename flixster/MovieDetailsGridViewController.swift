@@ -39,5 +39,7 @@ class MovieDetailsGridViewController: UIViewController {
         
         backdropImage.af_setImage(withURL: backdropUrl!)
     }
+    
+    
 
 }

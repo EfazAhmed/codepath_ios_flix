@@ -214,7 +214,7 @@
                                         <size key="customSize" width="179" height="260"/>
                                         <connections>
                                             <outlet property="posterView" destination="qdK-Uw-Chx" id="Gzt-Wv-uUE"/>
-                                            <segue destination="tWZ-jU-lCT" kind="presentation" id="Hjn-o2-ILf"/>
+                                            <segue destination="tWZ-jU-lCT" kind="show" id="YBR-Sd-Uug"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -237,16 +237,24 @@
             <objects>
                 <viewController id="tWZ-jU-lCT" customClass="MovieDetailsGridViewController" customModule="flixster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhn-r3-uN9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ZG-iL-bKm">
                                 <rect key="frame" x="0.0" y="44" width="375" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Znh-5u-mA4" appends="YES" id="UYL-NT-a78"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rod-jg-9uu">
                                 <rect key="frame" x="16" y="233" width="95" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0gp-uA-otd" appends="YES" id="2Dw-Vl-px8"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vj-zm-g7d">
                                 <rect key="frame" x="119" y="327" width="240" height="29"/>
@@ -275,8 +283,41 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJd-ao-GWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0gp-uA-otd">
+                    <connections>
+                        <segue destination="mPO-Qn-p4W" kind="presentation" id="Ks9-rk-BP3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Znh-5u-mA4">
+                    <connections>
+                        <segue destination="mPO-Qn-p4W" kind="show" id="fyg-Qz-45r"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="625" y="1323"/>
+        </scene>
+        <!--Movie Trailer View Controller-->
+        <scene sceneID="2wd-3P-ai5">
+            <objects>
+                <viewController storyboardIdentifier="MovieTrailer" id="mPO-Qn-p4W" customClass="MovieTrailerViewController" customModule="flixster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZSI-hi-Rzl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-G2-bh4">
+                                <rect key="frame" x="16" y="20" width="343" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R4x-oU-5J2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DWa-rh-4iY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Hp-bY-Tz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623.20000000000005" y="2016.3418290854574"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="CHs-na-VsC">
@@ -298,6 +339,9 @@
             <point key="canvasLocation" x="632.79999999999995" y="-70.614692653673174"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ks9-rk-BP3"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
