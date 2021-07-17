@@ -60,7 +60,6 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
                 
                     self.movies = dataDictionary["results"] as! [[String:Any]]
                     
-                print(self.movies)
                 self.collectionView.reloadData()
                     //print(dataDictionary)
                     // TODO: Get the array of movies
